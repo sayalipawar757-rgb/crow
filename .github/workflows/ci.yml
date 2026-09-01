@@ -1,11 +1,12 @@
+env:
+  APP_NAME: my_app
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Running tests"
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Deploying Jobs"
+      - names: show them
+        env:
+          GREETING: hello
+       run: echo "Deploying Jobs"
