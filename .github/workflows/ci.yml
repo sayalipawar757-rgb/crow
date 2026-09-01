@@ -8,4 +8,4 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploying"
+      - run: echo "Deploying Jobs"
