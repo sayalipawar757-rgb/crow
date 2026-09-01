@@ -1,0 +1,8 @@
+name: second CI
+
+on:push:
+   greet:
+   runs-on: ubuntu-latest
+   steps:
+      - uses: actions/checkout@v4
+      - run: echo "hello from github actions"
