@@ -7,16 +7,12 @@ on:
     branches: [main]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "Running tests"
   depoly:
     needs: test
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Deploiying to production"
+      - run: echo "Deploiying  cause this is the main"
      
         
