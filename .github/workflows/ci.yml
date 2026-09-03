@@ -1,12 +1,5 @@
 name: CI
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
+on: [push pull]
   depoly:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/crow'
