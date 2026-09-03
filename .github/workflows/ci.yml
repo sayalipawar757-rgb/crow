@@ -8,7 +8,6 @@ on:
 
 jobs:
   depoly:
-    needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/crow'
     steps:
