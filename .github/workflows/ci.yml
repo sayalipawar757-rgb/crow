@@ -1,10 +1,16 @@
 name: CI
-on: [push pull]
-  depoly:
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/crow'
+
+    if: github.ref == 'refs/heads/main'
+
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Deploiying  cause this is the main"
-     
-        
+
+      - run: echo "Deploying because this is the main branch"
