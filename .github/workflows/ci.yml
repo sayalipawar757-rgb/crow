@@ -10,7 +10,7 @@ jobs:
   depoly:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/crow'
     steps:
       - uses: actions/checkout@v4
       - run: echo "Deploiying  cause this is the main"
