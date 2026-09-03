@@ -6,12 +6,14 @@ on:
 
 jobs:
   deploy:
-  needs: test
-  runs-on: ubuntu-latest
-  environment: production
-  steps:
-    - uses: action/checkout@v4
-    - name: Deploy
-      env:
-        TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-      run: echo "Deploying to production"
+    needs: test
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy
+        env:
+          TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: echo "Deploying to production"
