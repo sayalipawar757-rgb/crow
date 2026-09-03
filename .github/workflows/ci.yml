@@ -13,5 +13,5 @@ jobs:
     - uses: action/checkout@v4
     - name: Deploy
       env:
-        TOKEN: ${{ secrets.DEPLOY_TOKEN }}cancel-timeout-minutes: 
+        TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       run: echo "Deploying to production"
