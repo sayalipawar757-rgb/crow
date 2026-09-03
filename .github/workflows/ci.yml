@@ -6,11 +6,12 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - run: echo "Deploying because this is the main branch"
+  needs: test
+  runs-on: ubuntu-latest
+  environment: production
+  steps:
+    - uses: action/checkout@v4
+    - name: Deploy
+      env:
+        TOKEN: ${{ secrets.DEPLOY_TOKEN }}cancel-timeout-minutes: 
+      run: echo "Deploying to production"
